@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Netflix Clone</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    }
+    body {
+      background-color: #000;
+      color: #fff;
+    }
+    header {
+      position: absolute;
+      top: 0;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      padding: 20px 40px;
+      z-index: 10;
+    }
+    .logo {
+      height: 40px;
+    }
+    .signin-btn {
+      background-color: #e50914;
+      color: white;
+      border: none;
+      padding: 8px 16px;
+      border-radius: 4px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+    .hero {
+      position: relative;
+      height: 100vh;
+      background: url('https://assets.nflxext.com/ffe/siteui/vlv3/26b3f055-a672-4e5f-8941-3d58ee45a0a7/f49f6c40-d994-4a2d-bd67-b6bc6d215ae4/US-en-20240415-popsignuptwoweeks-perspective_alpha_website_large.jpg') no-repeat center center/cover;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+    }
+    .overlay {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: rgba(0,0,0,0.6);
+    }
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      max-width: 800px;
+    }
+    .hero h1 {
+      font-size: 3rem;
+      font-weight: 900;
+    }
+    .hero h2 {
+      font-size: 1.5rem;
+      margin-top: 20px;
+      font-weight: 400;
+    }
+    .email-form {
+      margin-top: 20px;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    .email-form input {
+      padding: 15px;
+      font-size: 1rem;
+      width: 300px;
+      max-width: 100%;
+      border: none;
+    }
+    .email-form button {
+      padding: 15px 20px;
+      font-size: 1rem;
+      background: #e50914;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+    footer {
+      background: #111;
+      padding: 40px;
+      text-align: center;
+      font-size: 0.9rem;
+      color: #888;
+    }
+    .trailer-btn {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: #e50914;
+      color: #fff;
+      border: none;
+      padding: 10px 20px;
+      cursor: pointer;
+      border-radius: 5px;
+      z-index: 100;
+    }
+    .modal {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0,0,0,0.8);
+      justify-content: center;
+      align-items: center;
+      z-index: 200;
+    }
+    .modal-content {
+      position: relative;
+      background-color: #000;
+      padding: 20px;
+      border-radius: 10px;
+      max-width: 800px;
+      width: 90%;
+    }
+    .close-btn {
+      position: absolute;
+      top: 10px;
+      right: 15px;
+      background: transparent;
+      color: #fff;
+      border: none;
+      font-size: 1.5rem;
+      cursor: pointer;
+    }
+    iframe {
+      width: 100%;
+      height: 450px;
+      border: none;
+      border-radius: 10px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <img class="logo" src="https://upload.wikimedia.org/wikipedia/commons/7/7a/Logonetflix.png" alt="Netflix Logo">
+    <button class="signin-btn">Sign In</button>
+  </header>
+
+  <section class="hero">
+    <div class="overlay"></div>
+    <div class="hero-content">
+      <h1>Unlimited movies, TV shows, and more</h1>
+      <h2>Watch anywhere. Cancel anytime.</h2>
+      <form class="email-form">
+        <input type="email" placeholder="Email address" required>
+        <button type="submit">Get Started &gt;</button>
+      </form>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Netflix Clone. All rights reserved. This is a demo.</p>
+  </footer>
+
+  <button class="trailer-btn" onclick="openModal()">Watch Trailer</button>
+
+  <div class="modal" id="trailerModal">
+    <div class="modal-content">
+      <button class="close-btn" onclick="closeModal()">&times;</button>
+      <iframe src="https://www.youtube.com/embed/YoHD9XEInc0" title="Trailer" allowfullscreen></iframe>
+    </div>
+  </div>
+
+  <script>
+    function openModal() {
+      document.getElementById('trailerModal').style.display = 'flex';
+    }
+    function closeModal() {
+      document.getElementById('trailerModal').style.display = 'none';
+    }
+  </script>
+</body>
+</html>
